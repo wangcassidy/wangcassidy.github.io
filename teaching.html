@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>STA130 Tutorials</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Cassidy Wang</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="teaching.html">Tutorials</a>
+</li>
+<li>
+  <a href="contact.html">Contact</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">STA130 Tutorials</h1>
+
+</div>
+
+
+<p>I will be posting some additional resources for STA130 here. I will update this page over the semester.</p>
+<p><br></p>
+<hr />
+<div id="tutorial-1" class="section level2">
+<h2>Tutorial 1</h2>
+<p>Welcome to STA130!</p>
+<div id="problem-set-checklist" class="section level3">
+<h3>Problem Set Checklist</h3>
+<p><strong>Part 1:</strong></p>
+<ul>
+<li>Answer every question</li>
+<li>Submit both .pdf and .Rmd files</li>
+</ul>
+<p><strong>Part 2:</strong></p>
+<ul>
+<li>Read the rubric specific to the problem set (posted on Quercus).</li>
+<li>Use a software with spell check (such as Microsoft Word or SpellCheckPlus) to ensure that your spelling and grammar are correct.</li>
+<li>Use paragraphs to separate your ideas. As a rule of thumb, if your paragraph is more than 250 words long, it is probably too long.</li>
+<li>Write a short introduction to introduce the context to an audience who has never seen your problem set question.</li>
+<li>Write a short conclusion to tie your points back to the main idea, and clearly answer the research question.</li>
+<li>Use language appropriate for your audience. If you use any statistical vocabulary words, make sure to define them.</li>
+</ul>
+</div>
+<div id="additional-resources" class="section level3">
+<h3>Additional Resources</h3>
+<ul>
+<li><a href="https://writing.utoronto.ca/writing-centres/arts-and-science/">UofT Writing Centres</a></li>
+</ul>
+<hr />
+</div>
+</div>
+<div id="tutorial-2" class="section level2">
+<h2>Tutorial 2</h2>
+<div id="quick-review" class="section level3">
+<h3>Quick Review</h3>
+<p>What visualizations have you learned so far?</p>
+<ul>
+<li>Histogram: used to visualize the distribution of a <strong>numerical</strong> variable.</li>
+<li>Boxplot: used to visualize a <strong>numerical</strong> variable, or to visualize the distributions of numerical variables for different categories.</li>
+<li>Barplot: used to visualize a <strong>categorical</strong> variable.</li>
+</ul>
+</div>
+<div id="practice-problems" class="section level3">
+<h3>Practice Problems</h3>
+<ul>
+<li>What are the types of numerical variables? List some examples.</li>
+<li>What are the types of categorical variables? List some examples.</li>
+<li>How can you describe the distribution of a numerical variable? Categorical variable?</li>
+<li>What are the x-axis and y-axis of a histogram? Boxplot? Barplot?</li>
+<li>How do the mean, median and mode compare for a distribution that is left-skewed? Right-skewed?</li>
+<li>Compare and contrast histograms and boxplots.</li>
+<li>Is standard deviation or variance easier to interpret? Why?</li>
+</ul>
+</div>
+<div id="additional-resources-1" class="section level3">
+<h3>Additional Resources</h3>
+<ul>
+<li><a href="https://www.statisticshowto.com/probability-and-statistics/skewed-distribution/">Statistics How To</a></li>
+<li><a href="https://rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf">ggplot cheat sheet</a></li>
+</ul>
+<hr />
+</div>
+</div>
+<div id="tutorial-3" class="section level2">
+<h2>Tutorial 3</h2>
+<div id="motivation-for-pipes" class="section level3">
+<h3>Motivation for pipes</h3>
+<p>Why do we need pipes, anyway? Let’s explore this using the <a href="https://github.com/allisonhorst/palmerpenguins">palmerpenguins</a> dataset.</p>
+<pre class="r"><code>library(tidyverse)
+library(palmerpenguins) </code></pre>
+<p>This dataset contains information about penguins.</p>
+<pre class="r"><code>glimpse(penguins)</code></pre>
+<pre><code>## Rows: 344
+## Columns: 8
+## $ species           &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Ade…
+## $ island            &lt;fct&gt; Torgersen, Torgersen, Torgersen, Torgersen, Torgers…
+## $ bill_length_mm    &lt;dbl&gt; 39.1, 39.5, 40.3, NA, 36.7, 39.3, 38.9, 39.2, 34.1,…
+## $ bill_depth_mm     &lt;dbl&gt; 18.7, 17.4, 18.0, NA, 19.3, 20.6, 17.8, 19.6, 18.1,…
+## $ flipper_length_mm &lt;int&gt; 181, 186, 195, NA, 193, 190, 181, 195, 193, 190, 18…
+## $ body_mass_g       &lt;int&gt; 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 3475,…
+## $ sex               &lt;fct&gt; male, female, female, NA, female, male, female, mal…
+## $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 200…</code></pre>
+<p>We can see that each penguin belongs to a a species</p>
+<pre class="r"><code>unique(penguins$species)</code></pre>
+<pre><code>## [1] Adelie    Gentoo    Chinstrap
+## Levels: Adelie Chinstrap Gentoo</code></pre>
+<p>There are 3 species in total.</p>
+<p>Among the penguins with bill length greater than 35mm, what is the proportion of female penguins for each penguin species? One way we can determine this is by:</p>
+<ol style="list-style-type: decimal">
+<li>Filtering to penguins with bill length greater than 35mm</li>
+<li>Grouping by species</li>
+<li>Computing the proportion of females</li>
+</ol>
+<p>For simplicity, let’s remove penguins with missing sex and bill length first.</p>
+<pre class="r"><code>penguins &lt;- filter(penguins, !is.na(sex) &amp; !is.na(bill_length_mm))
+head(penguins)</code></pre>
+<pre><code>## # A tibble: 6 x 8
+##   species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g sex  
+##   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;int&gt; &lt;fct&gt;
+## 1 Adelie  Torge…           39.1          18.7              181        3750 male 
+## 2 Adelie  Torge…           39.5          17.4              186        3800 fema…
+## 3 Adelie  Torge…           40.3          18                195        3250 fema…
+## 4 Adelie  Torge…           36.7          19.3              193        3450 fema…
+## 5 Adelie  Torge…           39.3          20.6              190        3650 male 
+## 6 Adelie  Torge…           38.9          17.8              181        3625 fema…
+## # … with 1 more variable: year &lt;int&gt;</code></pre>
+<pre class="r"><code>select(mutate(summarise(group_by(filter(penguins, bill_length_mm &gt; 35), species), n_female = sum(sex == &quot;female&quot;), n=n()), prop_female = n_female / n), species, prop_female)</code></pre>
+<pre><code>## # A tibble: 3 x 2
+##   species   prop_female
+##   &lt;fct&gt;           &lt;dbl&gt;
+## 1 Adelie          0.471
+## 2 Chinstrap       0.5  
+## 3 Gentoo          0.487</code></pre>
+<p>This is a method that works, but it is very messy. What if we found we made a mistake, or we realized we wanted to add in another nested function? This becomes an R nightmare!</p>
+<p>We can also try reformatting the code, but it is still unpleasant to read and debug:</p>
+<pre class="r"><code>select(mutate(summarise(group_by(filter(penguins, bill_length_mm &gt; 35),
+                                 species),
+                        n_female = sum(sex == &quot;female&quot;),
+                        n=n()),
+              prop_female = n_female / n),
+       species, prop_female)</code></pre>
+<pre><code>## # A tibble: 3 x 2
+##   species   prop_female
+##   &lt;fct&gt;           &lt;dbl&gt;
+## 1 Adelie          0.471
+## 2 Chinstrap       0.5  
+## 3 Gentoo          0.487</code></pre>
+<p>This is an equivalent method, and is a lot nicer to read. However, it could be cleaner.</p>
+<pre class="r"><code>df &lt;- filter(penguins, bill_length_mm &gt; 35)
+df &lt;- group_by(df, species)
+df &lt;- summarise(df, n_female = sum(sex == &quot;female&quot;), n=n())
+df &lt;- mutate(df, prop_female = n_female / n)
+df &lt;- select(df, species, prop_female)
+
+df</code></pre>
+<pre><code>## # A tibble: 3 x 2
+##   species   prop_female
+##   &lt;fct&gt;           &lt;dbl&gt;
+## 1 Adelie          0.471
+## 2 Chinstrap       0.5  
+## 3 Gentoo          0.487</code></pre>
+<p>For this problem, pipes are probably the most elegant solution. It is very easy to understand and debug the code.</p>
+<pre class="r"><code>penguins %&gt;%
+  filter(bill_length_mm &gt; 35) %&gt;%
+  group_by(species) %&gt;%
+  summarise(n_female = sum(sex == &quot;female&quot;), n=n()) %&gt;%
+  mutate(prop_female = n_female / n) %&gt;%
+  select(species, prop_female)</code></pre>
+<pre><code>## # A tibble: 3 x 2
+##   species   prop_female
+##   &lt;fct&gt;           &lt;dbl&gt;
+## 1 Adelie          0.471
+## 2 Chinstrap       0.5  
+## 3 Gentoo          0.487</code></pre>
+<p>There are other ways to do this. Can you think of any?</p>
+</div>
+<div id="practice-problems-1" class="section level3">
+<h3>Practice Problems</h3>
+<ul>
+<li>What’s the difference between <code>summarise</code> and <code>mutate</code>?</li>
+<li>The function <code>sum</code> has a parameter <code>na.rm</code>. What does this do?</li>
+</ul>
+</div>
+<div id="additional-resources-2" class="section level3">
+<h3>Additional Resources</h3>
+<ul>
+<li><a href="https://rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf">dplyr cheat sheet</a></li>
+</ul>
+<hr />
+</div>
+</div>
+<div id="tutorial-4" class="section level2">
+<h2>Tutorial 4</h2>
+<div id="practice-problems-2" class="section level3">
+<h3>Practice Problems</h3>
+<ul>
+<li>Define the following terms:
+<ul>
+<li>Null hypothesis</li>
+<li>Alternative hypothesis</li>
+<li>Parameter</li>
+<li>Statistic</li>
+<li>Population</li>
+<li>Sample</li>
+<li>Test statistic</li>
+<li>Simulation</li>
+<li>Sampling distribution</li>
+<li>p-value</li>
+<li>Two-sided test</li>
+</ul></li>
+</ul>
+</div>
+<div id="additional-resources-3" class="section level3">
+<h3>Additional Resources</h3>
+<hr />
+</div>
+</div>
+<div id="tutorial-5" class="section level2">
+<h2>Tutorial 5</h2>
+<div id="using-latex-in-r-markdown" class="section level3">
+<h3>Using LaTeX in R Markdown</h3>
+<p><strong>Put single dollar signs ($) around your formulas if you want them to be in line with your text. For example:</strong></p>
+<p><code>My null hypothesis is $H_0: p_{heads} = 0.5$ and my alternative hypothesis is $H_A: p_{heads} \neq 0.5$.</code></p>
+<p><em>is displayed as:</em></p>
+<p>My null hypothesis is <span class="math inline">\(H_0: p_{heads} = 0.5\)</span> and my alternative hypothesis is <span class="math inline">\(H_A: p_{heads} \neq 0.5\)</span>.</p>
+<p><br></p>
+<p><strong>Put double dollar signs (<code>$$</code>) around your formulas if you do not want them to be in line with your text. For example: </strong></p>
+<p><code>My hypotheses are: $$ H_0: p_{heads} = 0.5  \\ H_A: p_{heads} \neq 0.5 $$</code></p>
+<p><em>is displayed as:</em></p>
+<p>My hypotheses are: <span class="math display">\[ H_0: p_{heads} = 0.5  \\ H_A: p_{heads} \neq 0.5 \]</span></p>
+<p><br></p>
+<p>When using R Markdown, never copy and paste symbols from external sources.</p>
+</div>
+<div id="practice-problems-3" class="section level3">
+<h3>Practice Problems</h3>
+<ul>
+<li>What does it mean to sample with replacement vs. to sample without replacement?</li>
+<li>Draw the confusion matrix.</li>
+</ul>
+</div>
+<div id="additional-resources-4" class="section level3">
+<h3>Additional Resources</h3>
+<hr />
+</div>
+</div>
+<div id="tutorial-6" class="section level2">
+<h2>Tutorial 6</h2>
+<div id="practice-problems-4" class="section level3">
+<h3>Practice Problems</h3>
+<ul>
+<li>What key assumption do we make when using the bootstrap method?</li>
+<li>When using the bootstrap method, do we sample with or without replacement?</li>
+<li>What is a confidence interval?</li>
+<li>What does it mean to be 95% confident?</li>
+</ul>
+</div>
+<div id="additional-resources-5" class="section level3">
+<h3>Additional Resources</h3>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
