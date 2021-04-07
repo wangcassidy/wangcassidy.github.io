@@ -13,15 +13,13 @@
 
 <title>STA130 Tutorials</title>
 
+<script src="site_libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
-<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
-<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
-<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
@@ -262,69 +260,6 @@ $(document).ready(function () {
 
 
 
-<style type="text/css">
-
-#TOC {
-  margin: 25px 0px 20px 0px;
-}
-@media (max-width: 768px) {
-#TOC {
-  position: relative;
-  width: 100%;
-}
-}
-
-@media print {
-.toc-content {
-  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
-  float: right;
-}
-}
-
-.toc-content {
-  padding-left: 30px;
-  padding-right: 40px;
-}
-
-div.main-container {
-  max-width: 1200px;
-}
-
-div.tocify {
-  width: 20%;
-  max-width: 260px;
-  max-height: 85%;
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  div.tocify {
-    width: 25%;
-  }
-}
-
-@media (max-width: 767px) {
-  div.tocify {
-    width: 100%;
-    max-width: none;
-  }
-}
-
-.tocify ul, .tocify li {
-  line-height: 20px;
-}
-
-.tocify-subheader .tocify-item {
-  font-size: 0.90em;
-}
-
-.tocify .list-group-item {
-  border-radius: 0px;
-}
-
-
-</style>
-
-
 
 </head>
 
@@ -332,16 +267,6 @@ div.tocify {
 
 
 <div class="container-fluid main-container">
-
-
-<!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row-fluid">
-<div class="col-xs-12 col-sm-4 col-md-3">
-<div id="TOC" class="tocify">
-</div>
-</div>
-
-<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -383,6 +308,49 @@ div.tocify {
 
 </div>
 
+<div id="TOC">
+<ul>
+<li><a href="#tutorial-1">Tutorial 1</a>
+<ul>
+<li><a href="#problem-set-checklist">Problem Set Checklist</a></li>
+<li><a href="#additional-resources">Additional Resources</a></li>
+</ul></li>
+<li><a href="#tutorial-2">Tutorial 2</a>
+<ul>
+<li><a href="#quick-review">Quick Review</a></li>
+<li><a href="#practice-problems">Practice Problems</a></li>
+<li><a href="#additional-resources-1">Additional Resources</a></li>
+</ul></li>
+<li><a href="#tutorial-3">Tutorial 3</a>
+<ul>
+<li><a href="#motivation-for-pipes">Motivation for pipes</a></li>
+<li><a href="#practice-problems-1">Practice Problems</a></li>
+<li><a href="#additional-resources-2">Additional Resources</a></li>
+</ul></li>
+<li><a href="#tutorial-4">Tutorial 4</a>
+<ul>
+<li><a href="#practice-problems-2">Practice Problems</a></li>
+<li><a href="#additional-resources-3">Additional Resources</a></li>
+</ul></li>
+<li><a href="#tutorial-5">Tutorial 5</a>
+<ul>
+<li><a href="#using-latex-in-r-markdown">Using LaTeX in R Markdown</a></li>
+<li><a href="#project-proposal-tips">Project Proposal Tips</a></li>
+<li><a href="#practice-problems-3">Practice Problems</a></li>
+<li><a href="#additional-resources-4">Additional Resources</a></li>
+</ul></li>
+<li><a href="#tutorial-6">Tutorial 6</a>
+<ul>
+<li><a href="#a-very-introductory-explanation-of-the-bootstrap-method">A very introductory explanation of the bootstrap method</a></li>
+<li><a href="#practice-problems-4">Practice Problems</a></li>
+</ul></li>
+<li><a href="#tutorial-7">Tutorial 7</a>
+<ul>
+<li><a href="#additional-resources-5">Additional Resources</a></li>
+</ul></li>
+<li><a href="#tutorial-8">Tutorial 8</a></li>
+</ul>
+</div>
 
 <p>I will be posting some additional resources for STA130 here. I will update this page over the semester.</p>
 <p><br></p>
@@ -606,7 +574,7 @@ df</code></pre>
 <ul>
 <li>Read the rubric carefully<br />
 </li>
-<li>Structure your writing using headings! Please don’t write an essay. Your structure might look something like this:<br />
+<li>Structure your writing using headings Your structure might look something like this:<br />
 <em>Research question 1</em><br />
 <em>Population for research question 1</em><br />
 <em>Data Visualization for research question 1</em><br />
@@ -650,11 +618,56 @@ df</code></pre>
 </div>
 <div id="additional-resources-4" class="section level3">
 <h3>Additional Resources</h3>
+<ul>
+<li><a href="https://www.khanacademy.org/math/ap-statistics/tests-significance-ap/error-probabilities-power/v/introduction-to-type-i-and-type-ii-errors">Introduction to Type I and Type II errors (Khan Academy)</a></li>
+</ul>
 <hr />
 </div>
 </div>
 <div id="tutorial-6" class="section level2">
 <h2>Tutorial 6</h2>
+<div id="a-very-introductory-explanation-of-the-bootstrap-method" class="section level3">
+<h3>A very introductory explanation of the bootstrap method</h3>
+<p>Let us illustrate the bootstrap method with a very simple example.</p>
+<p>Suppose that our parameter of interest is the population mean, <span class="math inline">\(\mu\)</span>. Naturally, our estimate of <span class="math inline">\(\mu\)</span> is the sample mean, <span class="math inline">\(\bar{x}\)</span>. Our goal is to find a range of plausible values for <span class="math inline">\(\mu\)</span>. In other words, we want to construct a confidence interval. In order to construct a confidence interval, we need to approximate the sampling distribution of <span class="math inline">\(\bar{x}\)</span>. Thus, we apply the bootstrap method.</p>
+<p>We observe a random sample of size 5:</p>
+<pre class="r"><code>data</code></pre>
+<pre><code>## [1] 0.92 0.72 0.10 3.10 0.62</code></pre>
+<p>The bootstrap algorithm is as follows:</p>
+<ol style="list-style-type: decimal">
+<li>Fix our observed data, <span class="math inline">\((0.92, 0.72, 0.10, 3.10, 0.62)\)</span>, and take a resample of the same size <strong>with replacement</strong> from it. We call this resample with replacement from our sample a <strong>bootstrap sample</strong>. Note that the bootstrap sample is <strong>not</strong> a sample from the population.</li>
+</ol>
+<pre class="r"><code>x1_B = sample(data, replace=TRUE)
+x1_B</code></pre>
+<pre><code>## [1] 3.10 3.10 0.72 0.10 0.72</code></pre>
+<p>(3.10, 3.10, 0.72, 0.10, 0.72) is a bootstrap sample. Notice that in our bootstrap sample, because we sample with replacement, there may be duplicate values.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>Compute the statistic of interest using the bootstrap sample. Here, our statistic of interest is <span class="math inline">\(\bar{x}\)</span>. This is called a bootstrap replication of <span class="math inline">\(\bar{x}\)</span>.</li>
+</ol>
+<pre class="r"><code>mean(x1_B)</code></pre>
+<pre><code>## [1] 1.548</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Repeat steps 1 and 2 a large number of times, say, 1000 times. We may plot a histogram of the 1000 bootstrap replications of the sample mean we obtain. Thus, we may visualize the bootstrap distribution.</li>
+</ol>
+<pre class="r"><code>bootstrap_mean = rep(NA, 1000)
+
+for (i in 1:1000) {
+  bootstrap_sample = sample(data, 5, replace=TRUE)
+  bootstrap_mean[i] = mean(bootstrap_sample)
+}
+
+hist(bootstrap_mean, xlab=&quot;Bootstrap replications of the sample mean&quot;, main=&quot;Bootstrap distribution&quot;)</code></pre>
+<p><img src="teaching_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<ol start="4" style="list-style-type: decimal">
+<li>Suppose that the significance level is 5%. To obtain a 95% confidence interval, we chop off the ends of the bootstrap distribution and look at the middle 95% of the values.</li>
+</ol>
+<pre class="r"><code>quantile(bootstrap_mean, c(0.025, 0.975))</code></pre>
+<pre><code>##  2.5% 97.5% 
+## 0.368 2.128</code></pre>
+<p>The 95% confidence interval is (0.368, 2.128).</p>
+<p>Note that the method that we used is also called the Monte Carlo bootstrap method, and the type of bootstrap confidence interval that we used is the percentile interval.</p>
+<p><strong>Reference:</strong> Efron, B., &amp; Tibshirani, R. J. (1994). An introduction to the bootstrap. Chapman &amp; Hall/CRC. <a href="https://doi.org/10.1007/978-1-4899-4541-9" class="uri">https://doi.org/10.1007/978-1-4899-4541-9</a></p>
+</div>
 <div id="practice-problems-4" class="section level3">
 <h3>Practice Problems</h3>
 <ul>
@@ -663,16 +676,78 @@ df</code></pre>
 <li>What is a confidence interval?</li>
 <li>What does it mean to be 95% confident?</li>
 </ul>
+<hr />
 </div>
+</div>
+<div id="tutorial-7" class="section level1">
+<h1>Tutorial 7</h1>
 <div id="additional-resources-5" class="section level3">
 <h3>Additional Resources</h3>
+<ul>
+<li><a href="https://www.khanacademy.org/math/statistics-probability/describing-relationships-quantitative-data">Khan Academy lessons on linear regression</a></li>
+</ul>
+<hr />
 </div>
+</div>
+<div id="tutorial-8" class="section level1">
+<h1>Tutorial 8</h1>
+<p>Suppose that we have the following data (please note that this is not real data):</p>
+<pre class="r"><code>glimpse(data)</code></pre>
+<pre><code>## Rows: 100
+## Columns: 3
+## $ cumulative_avg &lt;dbl&gt; 54.97808, 61.31531, 59.21083, 68.86785, 61.16971, 63.1…
+## $ sessional_avg  &lt;dbl&gt; 76.32885, 85.47312, 68.03861, 79.12542, 81.09591, 71.6…
+## $ year           &lt;chr&gt; &quot;Fourth&quot;, &quot;Fourth&quot;, &quot;First&quot;, &quot;First&quot;, &quot;Fourth&quot;, &quot;First…</code></pre>
+<pre class="r"><code>data %&gt;% ggplot(aes(x=cumulative_avg, y=sessional_avg, col=year)) +
+  geom_point() +
+  xlab(&quot;Cumulative Average&quot;) +
+  ylab(&quot;Sessional Average&quot;) +
+  guides(fill=guide_legend(title=&quot;Year&quot;))</code></pre>
+<p><img src="teaching_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<pre class="r"><code>model &lt;- lm(sessional_avg ~ cumulative_avg * d, data=data)
+round(summary(model)$coef, 3)</code></pre>
+<pre><code>##                        Estimate Std. Error t value Pr(&gt;|t|)
+## (Intercept)               3.757      2.589   1.451    0.150
+## cumulative_avg            1.088      0.044  24.797    0.000
+## dFourth                   8.287      3.550   2.334    0.022
+## cumulative_avg:dFourth    0.021      0.059   0.357    0.722</code></pre>
+<p>Let <span class="math inline">\(d_i\)</span> be an indicator variable, such that <span class="math inline">\(d_i = 1\)</span> if the student is in fourth year and <span class="math inline">\(d_i = 0\)</span> if the student is in first year.</p>
+<p><span class="math display">\[
+\hat{y_i} = 3.757 + 1.088  x_i + 8.287 d_i + 0.021 x_i d_i
+\]</span></p>
+<p>If d = 0, then: <span class="math display">\[
+\hat{y_i} = 3.757 + 1.088  x_i
+\]</span></p>
+<p>If d = 1, then: <span class="math display">\[
+\begin{aligned}
+\hat{y_i} &amp;= 3.757 + 1.088  x_i + 8.287 + 0.021 x_i \\
+ &amp;= (3.757 + 8.287) + (1.088 + 0.021) x_i \\
+ &amp;= 12.044 + 1.109 x_i
+\end{aligned}
+\]</span></p>
+<p>Suppose that we split our data by the categorical variable, and fit two regression lines.</p>
+<pre class="r"><code>subset0 &lt;- filter(data, data$year == &quot;First&quot;)
+subset1 &lt;- filter(data, data$year == &quot;Fourth&quot;)
+
+model0 &lt;- lm(subset0$sessional_avg ~ subset0$cumulative_avg)
+model1 &lt;- lm(subset1$sessional_avg ~ subset1$cumulative_avg)
+
+round(summary(model0)$coef, 3)</code></pre>
+<pre><code>##                        Estimate Std. Error t value Pr(&gt;|t|)
+## (Intercept)               3.757      2.425   1.549    0.129
+## subset0$cumulative_avg    1.088      0.041  26.479    0.000</code></pre>
+<pre class="r"><code>round(summary(model1)$coef, 3)</code></pre>
+<pre><code>##                        Estimate Std. Error t value Pr(&gt;|t|)
+## (Intercept)              12.044      2.533   4.754        0
+## subset1$cumulative_avg    1.109      0.041  27.232        0</code></pre>
+<p>The two fitted regression lines are:</p>
+<p><span class="math display">\[ \hat{y_i} = 3.757 +  1.088 x_i \]</span></p>
+<p><span class="math display">\[ \hat{y_i} = 12.044 +  1.109 x_i \]</span></p>
+<p>What do you notice?</p>
 </div>
 
 
 
-</div>
-</div>
 
 </div>
 
@@ -705,32 +780,6 @@ $(document).ready(function () {
 
 <!-- code folding -->
 
-<script>
-$(document).ready(function ()  {
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2,h3",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = true;
-    options.smoothScroll = true;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
-</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
